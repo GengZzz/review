@@ -4,9 +4,11 @@
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue",
+    "src/**/*.ts",
   ],
   "exclude": [
-    "src/**/__tests__/*"
+    "src/**/__tests__/*",
+    "src/**/*"
   ],
   "compilerOptions": {
     "composite": true,

@@ -11,16 +11,38 @@ const router = createRouter({
       redirect: '/snake',
       children: [
         {
-          path: 'snake',
+          path: '/snake',
           name: 'snake',
           component: () => import('@/views/snake/Snake.vue'),
         },
         {
-          path: 'transform',
+          path: '/transform',
           name: 'transform',
-          component: () => import('@/views/transform/index.vue'),
+          redirect: '/globlue',
+          children: [
+            {
+              path: '/globlue',
+              name: 'globlue',
+              component: () => import('@/views/globlue/globlue.vue'),
+            },
+            {
+              path: '/bounce',
+              name: 'bounce',
+              component: () => import('@/views/bounce/bounce.vue'),
+            },
+            {
+              path: 'click',
+              name: 'click',
+              component: () => import('@/views/click/click.vue'),
+            },
+          ],
         },
       ],
+    },
+    {
+      path: '/roll',
+      name: 'roll',
+      component: () => import('@/views/roll/roll.vue'),
     },
   ],
 })

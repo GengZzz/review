@@ -8,6 +8,19 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      redirect: '/snake',
+      children: [
+        {
+          path: 'snake',
+          name: 'snake',
+          component: () => import('@/views/snake/Snake.vue'),
+        },
+        {
+          path: 'transform',
+          name: 'transform',
+          component: () => import('@/views/transform/index.vue'),
+        },
+      ],
     },
   ],
 })
